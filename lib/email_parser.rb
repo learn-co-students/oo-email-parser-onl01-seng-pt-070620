@@ -10,9 +10,8 @@ attr_accessor :emails
   
   
   def parse
-    email_array = @emails.split(/[,\s]/).delete_if {|w| w.size < 2}
+    emails.split(/, | /).uniq
 
-    email_array.uniq
   end
   
 end     #ends class
